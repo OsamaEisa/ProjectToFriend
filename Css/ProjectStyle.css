@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container {
+    width:1170px;
+    margin: auto
+}
+
+body {
+    font-family: cursive;
+}
+
+/* Intro
+
+.intro {
+    background-color: #252F31;
+    color: #2DCC70;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    line-height: 1.8;
+    font-family: cursive
+}
+*/
+/*start portfolio */
+
+.portfolio {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    
+}
+.portfolio h2 {
+    color: #E41B17;
+    padding-bottom: 20px;
+}
+}
+.portfolio p {
+    color: #546265;
+    line-height: 1.7;
+}
+.portfolio .kalam {
+    padding-bottom: 20px;
+}
+.portfolio .ourWork { overflow: hidden }
+
+.portfolio .ourWork > div {
+    float: left;
+    width:33.3333%;
+    margin-bottom: 10px;
+}
+.portfolio .ourWork > div img {
+    width: 92%;
+    margin: 10px;
+    padding: 3px;
+    background-color:#FFF;
+    border: 1px solid #CCC;
+    box-shadow: 5px 10px 12px #CCC;
+}
+.portfolio .ourWork .names {
+    background-color: #DDD;
+    width: 7%;
+    padding: 2px 0px;
+    text-align: center;
+    position: relative;
+    top: 280px;
+    left: 0;
+}
+.portfolio .ourWork .names span {
+    font-size: 16px;
+}
+/*End portfolio */
+
+/* Project */
+
+.project {
+    background:url("../Images/ProjectPic.png") no-repeat center center;
+    min-height: 600px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*
+.project .data {
+    background-color: rgba(2,2,2,.3);
+    min-height: 600px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+*/
+.container .wordPic {
+    color: #2b272d;
+    text-align: center;
+}
+/* Steps */
+.steps {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.steps #contents {
+    padding: 15px;
+    border: 2px solid #aaa;
+    text-align: center;
+}
+.steps h3 {
+    font-size: 35px;
+    padding-bottom: 6px;
+    color: #333;
+}
+.steps ul li {
+    list-style: none;
+}
+.steps ul li a {
+    text-decoration: none;
+    color: #a60b18;
+}
+.steps ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Steps */
+
+/* Step 1 */
+.step1 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+.step1 ul li {
+    list-style: none;
+}
+.step1 ul li a {
+    text-decoration: none;
+    color: #a60b18;
+}
+.step1 ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Step 1 */
+
+/* Step 2 */
+.step2 {
+    color: #333;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+.step2 figure {
+    padding-top: 10px;
+    margin: auto
+}
+.step2 figure img {
+    border: 2px solid #8e8383;
+}
+/* Step 2 */
+
+/* Step 3 */
+
+.step3 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+.step3 ul {
+    padding-top: 15px;
+}
+.step3 ul li {
+    list-style: none;
+    display: inline;
+    margin: 12px;
+}
+.step3 ul li img {
+    border: 3px solid #8e8383;
+}
+/* Step 3*/
+
+/* Step 4 */
+.step4 {
+    color: #333;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+.step4 p {
+    color: #a60b18;
+    font-size: 20px;
+}
+.step4 img {
+    border: 2px solid #CCC;
+}
+.step4 .img {
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+/* Step 4 */
+
+/* Step 5 */
+
+.step5 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+.step5 h3 {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    color: #a60b18
+    
+}
+.step5 .Draw {
+    padding-bottom: 10px;
+    padding-top: 15px
+}
+.step5 .Draw img {
+    border: 2px solid #CCC;
+}
+.step5 .pencil1 {
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+.step5 .pencil1 img,.step5 .pencil2 img,.step5 .pencil3 img {
+    border: 2px solid #CCC;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.step5 .penDes {
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.step5 .pencil2 {
+    float: left;
+    width: 45%;
+}
+.step5 .pencil3 {
+    float: right;
+    width: 45%;
+}
+.step5 .board {
+    padding-top: 20px;
+}
+.step5 .here {
+    margin-top: 10px;
+    color: #a60b18
+}
+.step5 .here a {
+    color: #333;
+}
+/* Step 5 */
+
+/* Step 6 */
+
+.step6 {
+    color: #333;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+.step6 textarea {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    height: 329px;
+    width: 614px;
+}
+.step6 h2, .step6 span {
+    color: #a60b18
+}
+/*
+.step6 textarea span {
+    color: #a60b18
+}
+.step6 textarea p {
+    color: #FE8347
+}
+*/
+
+
+/* Step 7 */
+.step7 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+.step7 textarea {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    height: 329px;
+    width: 614px;
+}
+.step7 span {
+    color: #a60b18
+}
+.step7 .code {
+    margin-top: 10px;
+}
+.step7 a {
+    text-decoration: none;
+    padding: 10px 25px;
+    color: #2DCC70;
+    background: none;
+    border: 3px solid #2DCC70;
+    font-weight: bold;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.step7 a:hover {
+    background-color: #2DCC70;
+    color: #FFF;
+}
+
+/*Step 8 */
+
+.step8 {
+    color: #333;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center
+}
+
+.step8 a {
+    text-decoration: none;
+    color: #a60b18;
+}
+/*Step 8 */
+
+/* Step 9 */
+
+.step9 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.step9 h1 {
+    text-align: center
+}
+.step9 .lastImg {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center
+}
+.step9 p {
+    color: #a60b18
+}
+.step9 .last {
+    text-align: center;
+    color: #a60b18
+}
+
+
+
+
+
+
+
+
+
+

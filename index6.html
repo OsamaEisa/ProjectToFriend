@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Project </title>
+        <link rel="stylesheet" href="Css/ProjectStyle.css">
+        <link rel="stylesheet" href="Css/MustafaStyle.css">
+        <link rel="stylesheet" href="Css/normalize.css">
+            <!-- [if lt IE 9] >
+        <script src="Js/html5shiv.min.js"></script>
+        <script src="Js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <!-- Start Header -->
+        
+        <div class="navbar clearfix">
+                <div class="container">
+                     <h3><a href="index.html">Mini Maker Diploma <span>November</span></a></h3>
+                    <ul>
+                        <li class="dropdown">
+                          <a class="dropbtn">Choose an assignment</a>
+                          <div class="dropdown-content">
+                            <a href="index1.html" >CAD</a>
+                            <a href="index2.html"> Laser Cutting</a>
+                            <a href="index3.html" >Electronics</a>
+                            <a href="index4.html" >Embedded</a>
+                            <a href="index5.html" >3D Printing</a>
+                            <a href="index6.html" >Project</a>
+                          </div>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+
+                                        <!-- End Header -->
+        
+        <div class="portfolio">
+            <div class="container">
+                <h2>A Mini CNC Plotter Project</h2>
+                <p>This project propose you to build your Arduino Mini CNC Plotter. For the X and Y axis, will use the steppers motors of two old CD or DVD players. We will use two L293D motor drivers. One for each X and Y axis. For the Z axis we will use a small servo motor (for example SG90) that moves a pen up and down. The Z axis will be hard to develop (for young Makers), so to simplify the project, I design all mechanical parts that you need to print with a 3D printer.</p>
+                <p>You can develop your mini CNC Plotter directly from this post.</p>
+                
+            </div>
+        
+        </div>
+        
+        <div class="container">
+            <div class="project">
+                    <div class="data">
+                    </div>
+                </div>
+            <p class="wordPic"><i>"A CNC Plotter with old DVD players Arduino and L293D"</i></p>
+            </div>
+        
+        
+    <div class="steps">
+        <div class="container">
+            <div id="contents">
+                <h3 class="toc_title">Contents</h3>
+                <ul class="toc_list" style="display: block;">
+                    <li><a href="#Step_1_BOM"><span class="toc_number toc_depth_1">1</span> Step 1 : BOM</a></li>
+                    <li><a href="#Step_2_Prepare_translation_systems"><span class="toc_number toc_depth_1">2</span> Step 2 : Prepare translation systems</a></li>
+                    <li><a href="#Step_3_Prepare_stepper_motors_X_and_Y_axis"><span class="toc_number toc_depth_1">3</span> Step 3 : Prepare stepper motors (X and Y axis)</a></li>
+            <!--    <li><a href="#Step_4_Print_3D_parts"><span class="toc_number toc_depth_1">4</span> Step         4 : Print 3D parts</a></li>
+                    <li><a href="#Step_5_Prepare_theplywood_structure"><span class="toc_number toc_depth_1">5</span> Step 5 : Prepare the&nbsp;plywood structure</a></li>  -->
+                    <li><a href="#Step_6_Prepare_the_circuit"><span class="toc_number toc_depth_1">4</span> Step 4 : Prepare the circuit</a></li>
+                    <li><a href="#Step_7_Assembling_the_Mini_CNC_Plotter"><span class="toc_number toc_depth_1">5</span> Step 5 : Assembling the Mini CNC Plotter</a><ul><li><ul><li><a href="#X_and_Y_Axis"><span class="toc_number toc_depth_3">5.0.1</span> X and Y Axis</a></li><li><a href="#Drawing_surface"><span class="toc_number toc_depth_3">5.0.2</span> Drawing surface</a></li><li><a href="#Pencil_case_Z-axis"><span class="toc_number toc_depth_3">5.0.3</span> Pencil case (Z-axis)</a></li></ul></li><li><a href="#Breadboard_and_Arduino"><span class="toc_number toc_depth_2">5.1</span> Breadboard and Arduino</a></li></ul></li>
+                    <li><a href="#Step_8_Setup_X_and_Y_axis"><span class="toc_number toc_depth_1">6</span> Step 6 : Setup X and Y axis</a><ul><li><a href="#X_axis_test"><span class="toc_number toc_depth_2">6.1</span> X axis test</a></li><li><a href="#Y_axis_test"><span class="toc_number toc_depth_2">6.2</span> Y axis test</a></li><li><a href="#In_case_of_problem"><span class="toc_number toc_depth_2">6.3</span> In case of problem</a></li></ul></li>
+                    <li><a href="#Step_9_Upload_the_CNC_code_into_the_Arduino"><span class="toc_number toc_depth_1">7</span> Step 7 : Upload the CNC code into the Arduino</a></li>
+                    <li><a href="#Step_10_Install_Processing_or_use_gctrlexe"><span class="toc_number toc_depth_1">8</span> Step 8 : Install Processing or use gctrl.exe</a></li>
+                    <li><a href="#Step_11_Plot_your_first_draw_with_gctrl"><span class="toc_number toc_depth_1">9</span> Step 9 : Plot your first draw with gctrl</a><ul><li><ul><li><a href="#Partagernbsp"><span class="toc_number toc_depth_3">9.0.1</span> Partager&nbsp;:</a></li><li><a href="#Related"><span class="toc_number toc_depth_3">9.0.2</span> Related</a></li></ul></li></ul></li></ul>
+            </div>
+            </div>
+        </div>  
+        
+        <div class="step1">
+            <div class="container">
+            <h1><span id="Step_1_BOM">Step 1 : BOM</span></h1>
+            <p>You can buy all components on internet or DIY store.</p>
+            <ul>
+                <li><a href="http://s.click.aliexpress.com/e/UNZnqFaMZ" target="_blank" rel="nofollow">1x Arduino Uno</a></li>
+                <li><a href="http://s.click.aliexpress.com/e/ZjQFaIy7U" target="_blank" rel="nofollow">1x Breadboard 400 points</a></li>
+                <li><a href="http://s.click.aliexpress.com/e/MfeMjUbYv" target="_blank" rel="nofollow">2x L293D motor drives</a></li>
+                <li><a href="http://s.click.aliexpress.com/e/eU3zbURFY" target="_blank" rel="nofollow">1x servo motor SG90</a></li>
+                <li>2 old CD/DVD players</li>
+                <li>2 wires 22AWG (yellow) 15cm (0.6 in)</li>
+                <li>2 wires 22AWG (green) 15cm (0.6 in)</li>
+                <li>2 wires 22AWG (red) 15cm (0.6 in)</li>
+                <li>2 wires 22AWG (white) 15cm (0.6 in)</li>
+                <li><a href="http://s.click.aliexpress.com/e/vz7EIAI6U" target="_blank" rel="nofollow">Some shrink tubing</a></li>
+                <li>1x plywood sheet 200 x 160mm (7.87 in x 6.3 in) for X Axis.Thickness : 10mm (0.39in) or 5mm plexiglass (0.2 in)</li>
+                <li>2x plywood sheet 150 x 50mm (5.91 in x 0.2 in) for Y Axis.</li>
+                <li>1x plexiglass plate (0.2 in) 76 x 76 mm (size of a post it, 3 x 3 in)</li>
+                <li><a href="http://s.click.aliexpress.com/e/AiA2fIeMN" target="_blank" rel="nofollow">1x 3mm rod (0.12 in) x 80 mm (3.15 in)</a></li>
+                <li><a href="http://s.click.aliexpress.com/e/v7IAIEMVF" target="_blank" rel="nofollow">Glue gun</a></li>
+                <li><a href="http://s.click.aliexpress.com/e/R3NjunQja">2x screw M2</a> or glue to fix servo</li>
+                <li><a href="http://s.click.aliexpress.com/e/bMna23buN" target="_blank" rel="nofollow">8x M4x35mm and nuts</a></li>
+                <li><a href="http://s.click.aliexpress.com/e/bMna23buN" target="_blank" rel="nofollow">1x screw M5x20mm and nut</a></li>
+            </ul>
+        </div>    
+    </div>  
+        
+    <div class="step2">
+            <div class="container">
+                <h1><span id="Step_2_Prepare_translation_systems">Step 2 : Prepare translation systems</span></h1>
+                <p>Dismantle the old DVD players to get the translation system with the stepper motor.</p>
+                <figure id="attachment_307" style="width: 600px" class="wp-caption aligncenter"><img class="wp-image-307 tie-appear" src="Images/received_step2_1.jpeg" alt="" width="600" height="445"><figcaption class="wp-caption-text"><i>"Stepper Motor and DVD player translation system ready to use."</i></figcaption></figure>
+            </div>
+        </div>   
+        
+    <div class="step3">
+        <div class="container">
+            <h1><span id="Step_3_Prepare_stepper_motors_X_and_Y_axis">Step 3 : Prepare stepper motors (X and Y axis)</span></h1>
+            <p>It’s better to sold the wires on the flexible connector. You may have problems if you sold directly on the stepper motor. If you can, try to use 4 different colors, one for each Pin. There is no identification on the engine but the connection is quite simple. The first wire corresponds to the first output of the L293D (usually) and so on.</p>
+            <ul>
+            <li><img src="Images/received_step3_1.jpeg" alt="" width="400px" height="300px"></li>
+            <li><img src="Images/received_step3_2.jpeg" alt="" width="400px" height="300px"></li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class="step4">
+        <div class="container">
+            <h1><span id="Step_6_Prepare_the_circuit">Step 4 : Prepare the circuit</span></h1>
+            <p>The circuit is really easy as you can see bellow. One L293D for each axis and a servo motor for the Z-axis.</p>
+            <div class="img"> <img src="Images/rec_step4_1.jpg" alt="" width="700px" height="450px"></div>
+            <div><p>We can make the same circuit using H-Bridge L298N as following : </p></div>
+            <div class="img"><img src="Images/rec_step4_2.jpg" alt="" width="700px" height="400px">
+            </div>
+        </div>    
+    </div>    
+        
+    <div class="step5">
+        <div class="container">
+            <h1><span id="Step_7_Assembling_the_Mini_CNC_Plotter">Step 5 : Assembling the Mini CNC Plotter</span></h1>
+            <h3><span id="X_and_Y_Axis">X and Y Axis</span></h3>
+            <p>Use 4 spacers and 4 screws M4 x 30mm to assembling the X axis on the playwood (200 x 160mm). Do the same for the Y axis. Use the picture bellow to setup the position of elements. Finally attach the Y axis on the vertical uprights. The height is not important, we just need to adjust the position of the pen in its holder.</p>
+            <h3><span id="Drawing_surface">Drawing surface</span></h3>
+            <p>Use a glue gun to fix the drawing surface on the axis. To find the good position move the stepper motor to the max. position and fix it.</p>
+            <div class="Draw"><img src="Images/DrawingSurface.JPG" alt="" width="500px" height="550px"> </div>
+            <p><i>"Drawing Surface -front view-"</i></p>
+            <h3><span id="Pencil_case_Z-axis">Pencil case (Z-axis)</span></h3>
+            <p>Follow the drawing to assembly the pencil holder. Fix the servo motor with 2x M2 screws or glue.</p>
+            <div class="pencil1"><img src="Images/PencilHolder.png" alt="" width="600px" height="500px"> </div>
+            <p><i>"Pencil Holder Design"</i></p>
+        <div class="penDes">
+            <div class="pencil2"><img src="Images/leftview.JPG" alt="" width="500px" height="600px">
+            <p><i>"Pencil Holder -left view-"</i></p>
+            </div>
+            <div class="pencil3"><img src="Images/rightview.JPG" alt="" width="500px" height="600px">
+            <p><i>"Pencil Holder -right view- with the servo motor"</i></p>
+            </div>
+        </div>
+            <h3><span id="Breadboard_and_Arduino">Breadboard and Arduino</span></h3>
+            <p>Use spacers to fix the breadboard.</p>
+            <div class="board"><img src="Images/Breadboard.jpg" alt="" width="600px" height="800px"> </div>
+            <p><i>"Breadboard And Arduino -rear view-"</i></p>
+            <div class="here">If you have a 3D printer, you can make the pen holder by yourself like <a href="https://cults3d.com/fr/gadget/mini-traceur-cnc-plotter-arduino" target="_blank"><i>this</i></a></div>
+            
+        </div>    
+    </div>
+        <div class="step6">
+            <div class="container">
+        <h1><p id="Step_8_Setup_X_and_Y_axis">Step 6 : Setup X and Y axis</p></h1>
+        <p>Now, we can start programming ! First, we need to test if the X and Y axis are properly connected. After that, we will calibrate the stepper motors.</p>
+        <h2><span id="X_axis_test">X axis test</span></h2>
+            <p>X-Axis use the pins 8,9,10 and 11 by default. Start this program. If all is correct, the stepper motor must do 100 steps. Measure the distance and divide by 100 to obtain the X-Axis calibration value.</p>
+            <textarea disabled> /*
+              Mini Traceur Arduino (CNC Plotter)
+              Test X Axis
+              Projets DIY 02/2016
+            */
+            #include &lt;Stepper.h&gt;	// Include the stepper Motor librarie 
+
+            const int pasParRotation = 20; 	// Number of steps by turn. Standard value for CD/DVD
+
+            // Indicate X axis stepper motor Pins 
+            Stepper myStepperX(pasParRotation, 8,9,10,11); 
+
+            void setup() {
+             myStepperX.setSpeed(100);  // Stepper motor speed
+             // Indicate the number of steps the drive need to do. 
+             // CD/DVD drive can do about 250 steps max.
+             // Negative number to reverse direction of the movement
+             myStepperX.step(100);	// Measure the distance the pencil move to calculate X calibration value	
+             delay(100);
+            }
+            void loop() {}
+            </textarea>
+        <h2><span id="Y_axis_test">Y axis test</span></h2>
+        <p>Do the same for the Y axis.</p>
+        <textarea disabled>
+                    /*
+          Mini Traceur Arduino (CNC Plotter)
+              Test Y Axis
+              Projets DIY 02/2016
+        */
+        #include &lt;Stepper.h&gt;			//Libraries to drive stepper motors
+
+        const int pasParRotation = 20; 	//Number of steps to complete a round
+
+        //Pins on which the X-axis motor is connected
+        Stepper myStepperX(pasParRotation, 2,3,4,5); 
+
+        void setup() {
+         myStepperX.setSpeed(100);		// Movement speed
+         // Specify the number of steps the stepping motor must take
+          // Generally a CD / DVD drive engine can make up to 250 steps max
+          // Specify a negative number to reverse the direction of travel
+         myStepperX.step(100);			
+         delay(100);
+        }
+
+        void loop() {}        
+        </textarea>
+        <h2><span id="In_case_of_problem">In case of problem</span></h2>
+        <p>The main problems I encountered during the development of my plotter :</p>
+            <p><span>*</span> The engine does not move: first check the wiring of the L293D. The IN and OUT Pins may be reversed.</p>
+            <p><span>*</span> The direction of movement is reversed. Reverse Pins on the L293D.</p>
+            <p><span>*</span> The engine never stops, do not go to the end or “jump”. There is probably an obstacle in its path. Check if one screw is not too long …</p>
+            </div>
+        </div>
+        
+        <div class="step7">
+            <div class="container">
+                <h1><p id="Step_9_Upload_the_CNC_code_into_the_Arduino">Step 7 : Upload the CNC code into the Arduino</p></h1>
+            <span>Before uploading the CNC program, maybe you need to update the configuration : </span>
+                    <p><span>penZUp</span> : angle of the servo when the pen is Up</p>
+                    <p><span>penZDown</span> : angle when the pen is Down (on the paper sheet)</p>
+                    <p><span>Pins</span> : servo, X and Y axis</p>
+                    <p>Calibration values of the X and Y-axis</p>
+                <blockquote><p><span>Warning:</span> do not use the servo motor to press&nbsp;the pencil on the paper sheet. The force exerted by the actuator may be too strong and prevent movement of the axis X. The pen is pressed on the sheet by the spring.</p></blockquote>
+
+                <textarea disabled>
+                    /* 
+ Mini CNC Plotter firmware, based in TinyCNC https://github.com/MakerBlock/TinyCNC-Sketches
+ Send GCODE to this Sketch using gctrl.pde https://github.com/damellis/gctrl
+ Convert SVG to GCODE with MakerBot Unicorn plugin for Inkscape available here https://github.com/martymcguire/inkscape-unicorn
+ 
+ More information about the Mini CNC Plotter here (german, sorry): http://www.makerblog.at/2015/02/projekt-mini-cnc-plotter-aus-alten-cddvd-laufwerken/
+  */
+
+#include <Servo.h>
+#include <Stepper.h>
+
+#define LINE_BUFFER_LENGTH 512
+
+// Servo position for Up and Down 
+const int penZUp = 80;
+const int penZDown = 40;
+
+// Servo on PWM pin 6
+const int penServoPin = 6;
+
+// Should be right for DVD steppers, but is not too important here
+const int stepsPerRevolution = 20; 
+
+// create servo object to control a servo 
+Servo penServo;  
+
+// Initialize steppers for X- and Y-axis using this Arduino pins for the L293D H-bridge
+Stepper myStepperY(stepsPerRevolution, 2,3,4,5);            
+Stepper myStepperX(stepsPerRevolution, 8,9,10,11);  
+
+/* Structures, global variables    */
+struct point { 
+  float x; 
+  float y; 
+  float z; 
+};
+
+// Current position of plothead
+struct point actuatorPos;
+
+//  Drawing settings, should be OK
+float StepInc = 1;
+int StepDelay = 0;
+int LineDelay = 50;
+int penDelay = 50;
+
+// Motor steps to go 1 millimeter.
+// Use test sketch to go 100 steps. Measure the length of line. 
+// Calculate steps per mm. Enter here.
+float StepsPerMillimeterX = 6.0;
+float StepsPerMillimeterY = 6.0;
+
+// Drawing robot limits, in mm
+// OK to start with. Could go up to 50 mm if calibrated well. 
+float Xmin = 0;
+float Xmax = 40;
+float Ymin = 0;
+float Ymax = 40;
+float Zmin = 0;
+float Zmax = 1;
+
+float Xpos = Xmin;
+float Ypos = Ymin;
+float Zpos = Zmax; 
+
+// Set to true to get debug output.
+boolean verbose = false;
+
+//  Needs to interpret 
+//  G1 for moving
+//  G4 P300 (wait 150ms)
+//  M300 S30 (pen down)
+//  M300 S50 (pen up)
+//  Discard anything with a (
+//  Discard any other command!
+
+/**********************
+ * void setup() - Initialisations
+ ***********************/
+void setup() {
+  //  Setup
+  Serial.begin( 9600 );
+  
+  penServo.attach(penServoPin);
+  penServo.write(penZUp);
+  delay(200);
+
+  // Decrease if necessary
+  myStepperX.setSpeed(250);
+  myStepperY.setSpeed(250);  
+
+  //  Set & move to initial default position
+  // TBD
+
+  //  Notifications!!!
+  Serial.println("Mini CNC Plotter alive and kicking!");
+  Serial.print("X range is from "); 
+  Serial.print(Xmin); 
+  Serial.print(" to "); 
+  Serial.print(Xmax); 
+  Serial.println(" mm."); 
+  Serial.print("Y range is from "); 
+  Serial.print(Ymin); 
+  Serial.print(" to "); 
+  Serial.print(Ymax); 
+  Serial.println(" mm."); 
+}
+
+/**********************
+ * void loop() - Main loop
+ ***********************/
+void loop() 
+{
+  delay(200);
+  char line[ LINE_BUFFER_LENGTH ];
+  char c;
+  int lineIndex;
+  bool lineIsComment, lineSemiColon;
+
+  lineIndex = 0;
+  lineSemiColon = false;
+  lineIsComment = false;
+
+  while (1) {
+
+    // Serial reception - Mostly from Grbl, added semicolon support
+    while ( Serial.available()>0 ) {
+      c = Serial.read();
+      if (( c == '\n') || (c == '\r') ) {             // End of line reached
+        if ( lineIndex > 0 ) {                        // Line is complete. Then execute!
+          line[ lineIndex ] = '\0';                   // Terminate string
+          if (verbose) { 
+            Serial.print( "Received : "); 
+            Serial.println( line ); 
+          }
+          processIncomingLine( line, lineIndex );
+          lineIndex = 0;
+        } 
+        else { 
+          // Empty or comment line. Skip block.
+        }
+        lineIsComment = false;
+        lineSemiColon = false;
+        Serial.println("ok");    
+      } 
+      else {
+        if ( (lineIsComment) || (lineSemiColon) ) {   // Throw away all comment characters
+          if ( c == ')' )  lineIsComment = false;     // End of comment. Resume line.
+        } 
+        else {
+          if ( c <= ' ' ) {                           // Throw away whitepace and control characters
+          } 
+          else if ( c == '/' ) {                    // Block delete not supported. Ignore character.
+          } 
+          else if ( c == '(' ) {                    // Enable comments flag and ignore all characters until ')' or EOL.
+            lineIsComment = true;
+          } 
+          else if ( c == ';' ) {
+            lineSemiColon = true;
+          } 
+          else if ( lineIndex >= LINE_BUFFER_LENGTH-1 ) {
+            Serial.println( "ERROR - lineBuffer overflow" );
+            lineIsComment = false;
+            lineSemiColon = false;
+          } 
+          else if ( c >= 'a' && c <= 'z' ) {        // Upcase lowercase
+            line[ lineIndex++ ] = c-'a'+'A';
+          } 
+          else {
+            line[ lineIndex++ ] = c;
+          }
+        }
+      }
+    }
+  }
+}
+
+void processIncomingLine( char* line, int charNB ) {
+  int currentIndex = 0;
+  char buffer[ 64 ];                                 // Hope that 64 is enough for 1 parameter
+  struct point newPos;
+
+  newPos.x = 0.0;
+  newPos.y = 0.0;
+
+  //  Needs to interpret 
+  //  G1 for moving
+  //  G4 P300 (wait 150ms)
+  //  G1 X60 Y30
+  //  G1 X30 Y50
+  //  M300 S30 (pen down)
+  //  M300 S50 (pen up)
+  //  Discard anything with a (
+  //  Discard any other command!
+
+  while( currentIndex < charNB ) {
+    switch ( line[ currentIndex++ ] ) {              // Select command, if any
+    case 'U':
+      penUp(); 
+      break;
+    case 'D':
+      penDown(); 
+      break;
+    case 'G':
+      buffer[0] = line[ currentIndex++ ];          // /!\ Dirty - Only works with 2 digit commands
+      //      buffer[1] = line[ currentIndex++ ];
+      //      buffer[2] = '\0';
+      buffer[1] = '\0';
+
+      switch ( atoi( buffer ) ){                   // Select G command
+      case 0:                                   // G00 & G01 - Movement or fast movement. Same here
+      case 1:
+        // /!\ Dirty - Suppose that X is before Y
+        char* indexX = strchr( line+currentIndex, 'X' );  // Get X/Y position in the string (if any)
+        char* indexY = strchr( line+currentIndex, 'Y' );
+        if ( indexY <= 0 ) {
+          newPos.x = atof( indexX + 1); 
+          newPos.y = actuatorPos.y;
+        } 
+        else if ( indexX <= 0 ) {
+          newPos.y = atof( indexY + 1);
+          newPos.x = actuatorPos.x;
+        } 
+        else {
+          newPos.y = atof( indexY + 1);
+          indexY = '\0';
+          newPos.x = atof( indexX + 1);
+        }
+        drawLine(newPos.x, newPos.y );
+        //        Serial.println("ok");
+        actuatorPos.x = newPos.x;
+        actuatorPos.y = newPos.y;
+        break;
+      }
+      break;
+    case 'M':
+      buffer[0] = line[ currentIndex++ ];        // /!\ Dirty - Only works with 3 digit commands
+      buffer[1] = line[ currentIndex++ ];
+      buffer[2] = line[ currentIndex++ ];
+      buffer[3] = '\0';
+      switch ( atoi( buffer ) ){
+      case 300:
+        {
+          char* indexS = strchr( line+currentIndex, 'S' );
+          float Spos = atof( indexS + 1);
+          //          Serial.println("ok");
+          if (Spos == 30) { 
+            penDown(); 
+          }
+          if (Spos == 50) { 
+            penUp(); 
+          }
+          break;
+        }
+      case 114:                                // M114 - Repport position
+        Serial.print( "Absolute position : X = " );
+        Serial.print( actuatorPos.x );
+        Serial.print( "  -  Y = " );
+        Serial.println( actuatorPos.y );
+        break;
+      default:
+        Serial.print( "Command not recognized : M");
+        Serial.println( buffer );
+      }
+    }
+  }
+
+}
+
+
+/*********************************
+ * Draw a line from (x0;y0) to (x1;y1). 
+ * Bresenham algo from https://www.marginallyclever.com/blog/2013/08/how-to-build-an-2-axis-arduino-cnc-gcode-interpreter/
+ * int (x1;y1) : Starting coordinates
+ * int (x2;y2) : Ending coordinates
+ **********************************/
+void drawLine(float x1, float y1) {
+
+  if (verbose)
+  {
+    Serial.print("fx1, fy1: ");
+    Serial.print(x1);
+    Serial.print(",");
+    Serial.print(y1);
+    Serial.println("");
+  }  
+
+  //  Bring instructions within limits       
+      </textarea>
+            <div class="code"><a href="http://www.instructables.com/id/Mini-CNC-Plotter-Arduino-Based/?ALLSTEPS" target="_blank">Download the whole code"</a></div>
+            </div>
+        </div>
+                    
+        <div class="step8">
+            <div class="container">
+                <h1><span id="Step_10_Install_Processing_or_use_gctrlexe">Step 8 : Install Processing or use gctrl.exe</span></h1>
+                <p>Last step before your first draw. We need to install a program that send gcode file to the Arduino controler.</p>
+                <p>If you are a Windows user you can directly use the compilated version of gctrl. You can download it&nbsp;<a href="http://www.instructables.com/files/orig/FF9/2KU1/IHP6UIRQ/FF92KU1IHP6UIRQ.zip" target="_blank">here</a>.</p>
+                <p>For macOS or Linux users, you need to install Processing (<a href="https://processing.org/" target="_blank">here</a>) then run gctrl.pde (<a href="http://www.instructables.com/files/orig/FUX/KOHI/IHP6UIVB/FUXKOHIIHP6UIVB.pde" target="_blank">download here</a>)</p>
+                
+            </div>            
+        </div>            
+    
+            <div class="step9">
+                <div class="container">
+                    <h1><span id="Step_11_Plot_your_first_draw_with_gctrl">Step 9 : Plot your first draw with gctrl</span></h1>
+                    <p>Before making your first draw :</p>
+                    <ul>
+                        <li>Make sure the plot surface is at the origine.</li>
+                        <li>Check that nothing blocks the movement of the axes</li>
+                        <li>Place a sheet on the drawing area</li>
+                    </ul>
+                    <p>gctrl is an efficient but basic program in the sense that it does not check the selected file. The plotter start just after the selection of the gcode file. So, be sure before validate. In case of problem, press “x” !</p>
+                    <ul>
+                        <li>Press “p” to choose the serial port.</li>
+                        <li>Press “h” to go at home position</li>
+                        <li>Press “g” to chose the gcode file</li>
+                    </ul>
+        <div class="lastImg"> <img src="Images/stepA5r.png" alt="" width="600px" height="300px"></div>
+                    <p class="last"> I hope you find everything you need to make your Mini CNC Plotter. I hope I did not forget anything. Feel free to share your experience or add your tricks. Comments are there for.</p>
+                </div>        
+            </div>        
+                    
+                    <div class="footer">
+                <div class="container">
+                    <div class="contact clearfix">
+                        <ul class="list">
+                            <li><img src="Images/1480043024_facebook.png" alt="facbook" </li>
+                            <li><img src="Images/1480043011_twitter2.png" alt="twitter" </li>
+                            <li><img src="Images/1480042972_youtube.png" alt="youtube" </li>
+                            <li><img src="Images/1480042987_linkedin.png" alt="linkedin" </li>
+                            <li><img src="Images/1480042999_google.png" alt="Gmail" </li>
+                        </ul>
+                        <div class="address">
+                            <p>  Mustafa Ahmed Mohamed </br>
+                            Mobile: 0111 49 787 16 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                   <p>Copyright &copy; 2016 All Rights Reserved</p>
+                   <div class="by"> 
+                        By <a href="https://www.facebook.com/Eng.samsom" target="_blank">Osama Eisa</a>
+                   </div>
+                </div>
+        </div>
+    <script src="Js/html5shiv.min.js"></script>
+    </body>
+    
+</html>    
